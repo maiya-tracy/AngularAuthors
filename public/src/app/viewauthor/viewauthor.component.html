@@ -1,0 +1,19 @@
+<p>viewauthor works!</p>
+
+<a class="btn btn-light" [routerLink]="['/add']">Add an Author</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Author</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let author of authors">
+      <td>{{ author.name }}</td>
+      <td><button class="btn btn-info" [routerLink]="['/edit/'+author._id]">Edit</button> | <a class="btn btn-warning" (click)="deleteAuthorFromService(author._id)">Delete</a></td>
+    </tr>
+
+  </tbody>
+</table>

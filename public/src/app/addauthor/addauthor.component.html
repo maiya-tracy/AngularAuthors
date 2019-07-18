@@ -1,0 +1,10 @@
+<p>addauthor works!</p>
+
+<a class="btn btn-light" [routerLink]="['/home']">Home</a>
+
+<form (submit)="addAuthor()">
+  <p>Add a new author:</p>
+  <p class="text-danger" *ngIf = "postErrors.name != ''">{{postErrors.name}}</p>
+  <input type="text" placeholder="Author Name" name="newAuthor.name" [(ngModel)]="newAuthor.name">
+  <button class="btn btn-success">Submit</button>
+</form>
