@@ -1,12 +1,10 @@
-<p>editauthor works!</p>
+<p class="btn btn-dark" [routerLink]="['/home']">Home</p>
 
-<p class="btn btn-light" [routerLink]="['/home']">Home</p>
-<div>posterrors{{postErrors}}</div>
 <form (submit)="editAuthor()">
   <p>Edit an author:</p>
-  {{postErrors | json}}
-  {{currentAuthor | json}}
+  <p class="text-danger" *ngIf = "postErrors.name != ''">{{postErrors.name}}</p>
   <input type="text" placeholder="Author Name" name="currentAuthor.name" [(ngModel)]="currentAuthor.name">
+  <input type="hidden" name="currentAuthor._id" [(ngModel)]="currentAuthor._id">
   <button class="btn btn-success">Submit</button>
 </form>
   <a class="btn btn-warning" [routerLink]="['/home']">Cancel</a>

@@ -12,15 +12,15 @@ export class HttpService {
     return this._http.post('/authors', newAuthor)
   }
   deleteAuthor(authorID) {
-    return this._http.delete(`/authors/$(authorID)`)
+    return this._http.delete(`/authors/${authorID}`)
   }
   editAuthor(currentAuthor) {
-    return this._http.put(`/authors/$(currentAuthor._id)`, currentAuthor)
+    return this._http.put(`/authors/${currentAuthor._id}`, currentAuthor)
   }
   getAuthors() {
     return this._http.get('/authors')
   }
   findOneAuthor(authorID) {
-    return this._http.get(`/authors/$(authorID)`)
+    return this._http.get(`/authors/${authorID}`)
   }
 }

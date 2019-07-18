@@ -34,7 +34,7 @@ export class EditauthorComponent implements OnInit {
       } else {
         console.log("found one author", data);
         this.currentAuthor = data['data'];
-        console.log("THis is the curent author",this.currentAuthor)
+        console.log("This is the curent author",this.currentAuthor)
       }
 
     })

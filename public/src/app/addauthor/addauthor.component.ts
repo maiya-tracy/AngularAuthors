@@ -8,8 +8,8 @@ import { HttpService } from '../http.service';
   styleUrls: ['./addauthor.component.css']
 })
 export class AddauthorComponent implements OnInit {
-  newAuthor: { name: "" };
-  postErrors: { name: "" };
+  newAuthor = { name: "" };
+  postErrors = { name: "" };
 
   constructor(private _route: ActivatedRoute, private _router: Router, private _httpService: HttpService) { }
 
@@ -22,6 +22,7 @@ export class AddauthorComponent implements OnInit {
     this._router.navigate(['/home']);
   }
   addAuthor(): void {
+    this.postErrors = { name: "" };
     this._httpService.addAuthor(this.newAuthor).subscribe(data => {
       if (data['error']) {
         console.log("error creating author")

@@ -54,7 +54,8 @@ app.get('/authors', (req, res) => {
 })
 
 app.get('/authors/:id', (req, res) => {
-    Author.findOne({_id: req.params.id}, (err, authors) => {
+  var ObjectId = mongoose.Types.ObjectId
+    Author.findOne({_id: new ObjectId(req.params.id)}, (err, authors) => {
         if(err){
            console.log("Returned error", err);
            res.json({message: "Error", error: err})
